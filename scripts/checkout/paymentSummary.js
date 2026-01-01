@@ -26,7 +26,7 @@ export function renderPaymentSummary(){
 
     itemPriceCents += (matchingProduct.priceCents * cartItem.quantity);
 
-    itemQuantity += cartItem.quantity;
+    itemQuantity += Number(cartItem.quantity);
     
   });
 
