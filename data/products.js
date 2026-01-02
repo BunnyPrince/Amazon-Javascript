@@ -2,7 +2,7 @@ import { formatCurrency } from "../scripts/utils/money.js";
 
 formatCurrency
 
-class Products{
+export class Products{
   id;
   image;
   name;
@@ -44,6 +44,20 @@ class Clothing extends Products{
     `;
   }
 }
+
+/*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+
+
+function logThis(){
+  console.log(this);
+}
+
+logThis(); // undefined
+logThis.call('hello'); // pass the parameter to 'this'
+*/
 
 export const products = [
   {
