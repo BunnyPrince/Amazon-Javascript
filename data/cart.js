@@ -93,3 +93,15 @@ export function getTotalCartQuantity(){
 
   return quantity;
 }
+
+
+export function loadCart(render){
+  const xhr = new XMLHttpRequest();
+  xhr.addEventListener('load', () =>{
+    console.log(xhr.response);
+    render();
+  });
+  xhr.open('GET', 'https://supersimplebackend.dev/cart');
+  xhr.send();
+
+}
