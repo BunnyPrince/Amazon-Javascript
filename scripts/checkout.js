@@ -2,6 +2,16 @@ import { cart, loadCart } from "../data/cart.js";
 import { loadProductFetch } from "../data/products.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
+
+async function loadPage(){
+  console.log('load page');
+  return 'valueResolve'
+}
+
+loadPage().then((value) =>{
+  console.log(value);
+  console.log('hello');
+})
 // import '../data/cart-oop.js';
 // import '../data/cart-class.js';
 // import '../data/backend-practice.js'
