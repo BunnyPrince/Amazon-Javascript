@@ -1,5 +1,5 @@
 import { cart, loadCart } from "../data/cart.js";
-import { loadProducts } from "../data/products.js";
+import { loadProductFetch } from "../data/products.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 // import '../data/cart-oop.js';
@@ -66,14 +66,7 @@ loadProducts(() => {
 
 
 Promise.all([
-  new Promise((resolve) =>{
-    console.log('start promise');
-    loadProducts(() =>{
-      console.log('finshed loading');
-      resolve('value1');
-    });
-  
-  }),
+  loadProductFetch(),
   new Promise((resolve) =>{
     console.log('next step');
     loadCart(() =>{

@@ -62,6 +62,28 @@ logThis.call('hello'); // pass the parameter to 'this'
 
 export let products = [];
 
+
+export function loadProductFetch(){
+  const promise = fetch('https://supersimplebackend.dev/products').then((respond) =>{
+    return respond.json();
+  }).then((productsData) =>{
+    products = productsData.map((productDetails) => {
+      if(productDetails.type === 'clothing'){
+        return new Clothing(productDetails);
+      }
+      return new Products(productDetails);
+    });
+    console.log('load products');
+  });
+
+  return promise;
+}
+// loadProductFetch().then(() =>{
+//   console.log('next step');
+// });
+
+
+
 export function loadProducts(render){
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', () =>{
